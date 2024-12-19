@@ -17,7 +17,7 @@ export interface StoreType {
     initialValue: number;
     setInitialValue: (value: number) => void;
     finalOutput: number | undefined;
-    setFinalOutput: (value: number) => void;
+    setFinalOutput: (value: number | undefined) => void;
     functions: FunctionDataType[];
     setFunctions: (updatedFunc: FunctionDataType[]) => void;
     cardPositions: CardPositionType;

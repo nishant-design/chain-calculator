@@ -15,7 +15,7 @@ const useApp = () => {
   const calculateFinalOutput = () => {
     let currentFunctionId: number | null = 1;
     let currentValue = initialValue;
-
+  
     while (currentFunctionId !== null) {
       const currentFunction = functions.find(
         (func) => func.id === currentFunctionId
@@ -34,7 +34,9 @@ const useApp = () => {
   };
 
   useEffect(() => {
-    calculateFinalOutput();
+    if(initialValue !== 0) {
+      calculateFinalOutput();
+    }
   }, [initialValue]);
 
   useEffect(() => {

@@ -22,14 +22,16 @@ const FunctionCard: React.FC<FunctionCardProps> = ({
   initial = false,
   final = false,
 }) => {
-  const {setInitialValue} = useStore((state: StoreType) => state);
+  const {setInitialValue, initialValue} = useStore((state: StoreType) => state);
 
   //this is to check that the input only has numbers and operators given (+,-,*,/,^)
   const handleEquationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newEquation = e.target.value;
     if (/^[x0-9+\-*/^().\s]*$/.test(newEquation)) {
       onEquationChange(id, newEquation);
-      setInitialValue(0);
+      if(initialValue !== 0) {
+        setInitialValue(0);
+      }
     }
   };
 

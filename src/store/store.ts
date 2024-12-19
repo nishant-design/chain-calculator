@@ -4,7 +4,7 @@ import { StoreType } from "../types/chainCalculator";
 
 const useStore = create<StoreType>((set) => {
     return {
-        initialValue: 2,
+        initialValue: 0,
         setInitialValue: (value) => set({initialValue: value}),
         finalOutput: undefined,
         setFinalOutput: (value) => set({finalOutput: value}),
