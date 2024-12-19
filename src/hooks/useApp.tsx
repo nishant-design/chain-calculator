@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import useStore, { StoreType } from "../store/store";
+import useStore from "../store/store";
+import { StoreType } from "../types/chainCalculator";
 
 const useApp = () => {
   const { functions, setFunctions, initialValue, setFinalOutput, setCardPositions } = useStore((state: StoreType) => state);
